@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 1 - Relative & Absolute</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      position: relative;
+      width: 300px;
+      height: 180px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: crimson;
+      color: white;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">New</div>
+    <h3>Product Card</h3>
+    <p>This product just arrived! Hover to learn more.</p>
+  </div>
+</body>
+</html>

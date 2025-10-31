@@ -1,0 +1,128 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+
+.wrapper {
+    background-image: url('https://wallpaperaccess.com/full/31193.jpg'); 
+    background-size: cover;
+    min-height: 100vh; 
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, .5);
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #00bfff;
+  border-radius: 6px;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  width: 100%;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #00bfff;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00bfff;
+}
+
+
+/* Burger menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger div.bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.logo{
+   padding-right: 500px;
+}
+
+/* Burger animation (X) */
+.burger.active div:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.burger.active div:nth-child(2) { opacity: 0; }
+.burger.active div:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  
+}
